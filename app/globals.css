@@ -1,0 +1,296 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Hitos Design System - Child Development Tracking App */
+/* Logo colors: Teal #63B3A6, Golden #F5C542, Lavender #C4B7D3, Coral #F4A68A, Navy #3D4A5C */
+:root {
+  /* Core Brand Colors - Warm, Trustworthy, Playful */
+  --background: #f7f5f2; /* Warm cream white from logo background */
+  --foreground: #3D4A5C; /* Navy blue from logo */
+  
+  /* Cards and Surfaces */
+  --card: #ffffff;
+  --card-foreground: #3D4A5C;
+  --popover: #ffffff;
+  --popover-foreground: #3D4A5C;
+  
+  /* Primary - Teal (Trust, Calm, Growth) */
+  --primary: #63B3A6; /* Exact teal from logo */
+  --primary-foreground: #ffffff;
+  
+  /* Secondary - Soft Lavender */
+  --secondary: #E8E3ED; /* Lighter lavender for backgrounds */
+  --secondary-foreground: #5C4D6B;
+  
+  /* Muted - Warm Gray */
+  --muted: #f0ede8;
+  --muted-foreground: #6B7280;
+  
+  /* Accent - Golden Amber (Achievements, Celebrations) */
+  --accent: #F5C542; /* Exact golden from logo */
+  --accent-foreground: #4A3D1A;
+  
+  /* Semantic Colors */
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  
+  /* Success - Teal variant (Milestones achieved) */
+  --success: #4A9D8E;
+  --success-foreground: #ffffff;
+  
+  /* Warning - Coral (Gentle attention) */
+  --warning: #F4A68A; /* Exact coral from logo */
+  --warning-foreground: #5C3D2E;
+  
+  /* Info - Lavender */
+  --info: #C4B7D3; /* Exact lavender from logo */
+  --info-foreground: #3D3450;
+  
+  /* Borders and Inputs */
+  --border: #e5e2dc;
+  --input: #f5f3ef;
+  --ring: #63B3A6;
+  
+  /* Chart Colors - Milestone Categories (from logo icons) */
+  --chart-1: #63B3A6; /* Teal - Motor Grueso (bebé gateando) */
+  --chart-2: #F5C542; /* Golden - Motor Fino (huella) */
+  --chart-3: #C4B7D3; /* Lavender - Lenguaje (burbuja) */
+  --chart-4: #F4A68A; /* Coral - Social/Cognitivo (diente) */
+  --chart-5: #4A9D8E; /* Teal oscuro - Biológico */
+  
+  /* Gamification Colors */
+  --badge-bronze: #CD7F32;
+  --badge-silver: #A8A8A8;
+  --badge-gold: #F5C542;
+  --celebration: #F5C542;
+  
+  /* Layout */
+  --radius: 1rem;
+  
+  /* Sidebar */
+  --sidebar: #f7f5f2;
+  --sidebar-foreground: #3D4A5C;
+  --sidebar-primary: #63B3A6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #E8E3ED;
+  --sidebar-accent-foreground: #5C4D6B;
+  --sidebar-border: #e5e2dc;
+  --sidebar-ring: #63B3A6;
+}
+
+.dark {
+  --background: #1a1d2e;
+  --foreground: #f0ede8;
+  
+  --card: #242838;
+  --card-foreground: #f0ede8;
+  --popover: #242838;
+  --popover-foreground: #f0ede8;
+  
+  --primary: #7CC4B8;
+  --primary-foreground: #1a1d2e;
+  
+  --secondary: #3D3450;
+  --secondary-foreground: #D4C8E3;
+  
+  --muted: #2a2d3e;
+  --muted-foreground: #9CA3AF;
+  
+  --accent: #E5B63A;
+  --accent-foreground: #1a1d2e;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #f0ede8;
+  
+  --success: #5BB5A5;
+  --success-foreground: #f0ede8;
+  
+  --warning: #E89878;
+  --warning-foreground: #1a1d2e;
+  
+  --info: #B5A8C5;
+  --info-foreground: #1a1d2e;
+  
+  --border: #3a3d4e;
+  --input: #2a2d3e;
+  --ring: #7CC4B8;
+  
+  --chart-1: #7CC4B8;
+  --chart-2: #E5B63A;
+  --chart-3: #B5A8C5;
+  --chart-4: #E89878;
+  --chart-5: #5BB5A5;
+  
+  --badge-bronze: #B87333;
+  --badge-silver: #C0C0C0;
+  --badge-gold: #E5B63A;
+  --celebration: #E5B63A;
+  
+  --sidebar: #1f2233;
+  --sidebar-foreground: #f0ede8;
+  --sidebar-primary: #7CC4B8;
+  --sidebar-primary-foreground: #1a1d2e;
+  --sidebar-accent: #3D3450;
+  --sidebar-accent-foreground: #D4C8E3;
+  --sidebar-border: #3a3d4e;
+  --sidebar-ring: #7CC4B8;
+}
+
+@theme inline {
+  --font-sans: 'Nunito', 'Nunito Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-badge-bronze: var(--badge-bronze);
+  --color-badge-silver: var(--badge-silver);
+  --color-badge-gold: var(--badge-gold);
+  --color-celebration: var(--celebration);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-full: 9999px;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply bg-background scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Mobile touch targets - applied via specific components, not globally */
+  
+  /* Smooth transitions for theme changes */
+  *, *::before, *::after {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Custom utilities for Hitos */
+@layer utilities {
+  /* Milestone category colors */
+  .milestone-motor-grueso {
+    @apply bg-chart-1/10 text-chart-1 border-chart-1/30;
+  }
+  .milestone-motor-fino {
+    @apply bg-chart-2/10 text-chart-2 border-chart-2/30;
+  }
+  .milestone-lenguaje {
+    @apply bg-chart-3/10 text-chart-3 border-chart-3/30;
+  }
+  .milestone-social {
+    @apply bg-chart-4/10 text-chart-4 border-chart-4/30;
+  }
+  .milestone-biologico {
+    @apply bg-chart-5/10 text-chart-5 border-chart-5/30;
+  }
+  
+  /* Status indicators */
+  .status-achieved {
+    @apply bg-success/10 text-success border-success/30;
+  }
+  .status-in-progress {
+    @apply bg-accent/10 text-accent-foreground border-accent/30;
+  }
+  .status-pending {
+    @apply bg-muted text-muted-foreground border-border;
+  }
+  .status-attention {
+    @apply bg-warning/10 text-warning-foreground border-warning/30;
+  }
+  
+  /* Badge styles */
+  .badge-bronze {
+    @apply bg-badge-bronze/20 text-badge-bronze border-badge-bronze/30;
+  }
+  .badge-silver {
+    @apply bg-badge-silver/20 text-badge-silver border-badge-silver/30;
+  }
+  .badge-gold {
+    @apply bg-badge-gold/20 text-badge-gold border-badge-gold/30;
+  }
+  
+  /* Safe area for mobile bottom navigation */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  
+  /* Glass effect for overlays */
+  .glass {
+    @apply bg-background/80 backdrop-blur-lg;
+  }
+  
+  /* Celebration animation */
+  @keyframes celebrate {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  .animate-celebrate {
+    animation: celebrate 0.5s ease-in-out;
+  }
+  
+  /* Pulse glow for achievements */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 var(--celebration); }
+    50% { box-shadow: 0 0 20px 5px var(--celebration); }
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
